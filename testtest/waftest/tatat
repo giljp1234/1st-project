@@ -1,0 +1,23 @@
+statement = {
+        Effect = "Allow"
+        Principal = {
+          type = "AWS"
+        }
+        Actions = [
+          "s3:PutObject",
+          "s3:PutObjectAcl",
+          "s3:ListBucket",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:DescribeLogStreams",
+          "logs:PutSubcriptionFilter",
+          "iam:PassRole"
+
+        ]
+        Resources = [
+          "${aws_cloudwatch_log_destination.watch-destination.arn}",
+          "${aws_s3_bucket.log.arn}",
+          "${aws_s3_bucket.log.arn}/*"
+        ]
+    }
+}
