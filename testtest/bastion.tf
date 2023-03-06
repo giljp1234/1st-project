@@ -34,8 +34,8 @@ resource "aws_instance" "bastion_a" {
     user_data = <<-EOF
                 #!bin/bash
                 # Set AWS CLI credentials
-                aws configure set aws_access_key_id "AKIARSI5JEKQTRT6RCXY"
-                aws configure set aws_secret_access_key "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"
+                aws configure set aws_access_key_id ""
+                aws configure set aws_secret_access_key ""
                 aws configure set region "ap-northeast-2"
                 aws configure set output "json"
 
